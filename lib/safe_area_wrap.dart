@@ -20,13 +20,13 @@ class _SafeAreaWrap extends State<SafeAreaWrap> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    _lastSize = WidgetsBinding.instance.window.physicalSize;
-    WidgetsBinding.instance.addObserver(this);
+    _lastSize = WidgetsBinding.instance!.window.physicalSize;
+    WidgetsBinding.instance?.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance?.removeObserver(this);
     _insets.dispose();
     super.dispose();
   }
@@ -34,7 +34,7 @@ class _SafeAreaWrap extends State<SafeAreaWrap> with WidgetsBindingObserver {
   @override
   void didChangeMetrics() {
     setState(() {
-      Size newSize = WidgetsBinding.instance.window.physicalSize;
+      Size newSize = WidgetsBinding.instance!.window.physicalSize;
       heightChange = newSize.height - _lastSize.height;
       _lastSize = newSize;
     });
