@@ -5,7 +5,7 @@ publish_to: none
 homepage:
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.20.0"
 
 dependencies:
@@ -13,10 +13,8 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  browser_adapter:
-    git:
-      url: https://github.com/KurobiHq/browser_adapter.git
-
+  js: ^0.7.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
